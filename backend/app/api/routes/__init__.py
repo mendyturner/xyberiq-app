@@ -1,3 +1,3 @@
 """API route modules."""
 
-__all__ = ["auth", "admin"]
+__all__ = ["auth", "admin", "billing"]

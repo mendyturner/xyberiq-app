@@ -29,9 +29,14 @@ class Settings(BaseSettings):
     redis_url: RedisDsn = Field(default="redis://localhost:6379/0", env="REDIS_URL")
 
     stripe_api_key: str | None = Field(default=None, env="STRIPE_API_KEY")
+    stripe_publishable_key: str | None = Field(default=None, env="STRIPE_PUBLISHABLE_KEY")
+    stripe_webhook_secret: str | None = Field(default=None, env="STRIPE_WEBHOOK_SECRET")
     ach_provider_api_url: str | None = Field(default=None, env="ACH_API_URL")
     ach_provider_api_key: str | None = Field(default=None, env="ACH_API_KEY")
     billing_free_trial_days: int = Field(default=7)
+    billing_success_url: str = Field(default="http://localhost:4242/success.html")
+    billing_cancel_url: str = Field(default="http://localhost:4242/cancel.html")
+    billing_portal_return_url: str = Field(default="http://localhost:4242")
 
     provisioning_topic_arn: str | None = Field(default=None, env="PROVISIONING_TOPIC_ARN")
     default_from_email: str = Field(default="support@xyberiq.io")

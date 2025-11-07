@@ -53,6 +53,15 @@ class TenantService:
         return db.get(Tenant, tenant_id)
 
     @staticmethod
+    def get_by_billing_customer_id(*, db: Session, customer_id: str) -> Tenant | None:
+        stmt = (
+            select(Tenant)
+            .where(Tenant.billing_customer_id == customer_id)
+            .execution_options(tenant_aware=False)
+        )
+        return db.execute(stmt).scalar_one_or_none()
+
+    @staticmethod
     def attach_billing_profile(
         *,
         db: Session,

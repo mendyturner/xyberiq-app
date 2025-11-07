@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr, Field, constr
+from pydantic import BaseModel, EmailStr, Field, constr, validator
 
 from app.db.models.enums import RoleKey, UserStatus
 
@@ -107,6 +107,45 @@ class UserOut(BaseModel):
     roles: list[RoleKey] = Field(default_factory=list)
 
 
+class CreateCheckoutSessionRequest(BaseModel):
+    """Request payload to start a Stripe Checkout session."""
+
+    lookup_key: str
+    quantity: int = Field(default=1, ge=1)
+
+
+class CheckoutSessionResponse(BaseModel):
+    """Response describing created Checkout session."""
+
+    session_id: str
+    url: str
+
+
+class CreatePortalSessionRequest(BaseModel):
+    """Request to create a Stripe Billing Portal session."""
+
+    checkout_session_id: str | None = Field(default=None)
+    customer_id: str | None = Field(default=None)
+
+    @validator("customer_id", always=True)
+    def check_one_identifier(cls, v: str | None, values: dict[str, object]) -> str | None:
+        if not v and not values.get("checkout_session_id"):
+            raise ValueError("customer_id or checkout_session_id is required")
+        return v
+
+
+class PortalSessionResponse(BaseModel):
+    """Billing portal session data."""
+
+    url: str
+
+
+class WebhookResponse(BaseModel):
+    """Generic response for webhook acknowledgements."""
+
+    status: str = "success"
+
+
 __all__ = [
     "TenantAdmin",
     "RegisterTenantRequest",
@@ -119,4 +158,9 @@ __all__ = [
     "TenantProvisioningRequest",
     "BillingCustomer",
     "UserOut",
+    "CreateCheckoutSessionRequest",
+    "CheckoutSessionResponse",
+    "CreatePortalSessionRequest",
+    "PortalSessionResponse",
+    "WebhookResponse",
 ]
