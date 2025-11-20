@@ -17,16 +17,15 @@
     <style>
       :root {
         --foundation-red: #ED1C24;
-        --foundation-red-deep: #BF0A16;
-        --coal: #050505;
-        --ink: #121212;
-        --charcoal: #1E1E1E;
+        --foundation-red-deep: #B90B17;
+        --cranberry: #7F060D;
+        --evergreen-deep: #031D14;
+        --pine-green: #0F7A4A;
+        --holly-green: #1EA464;
+        --mint-cream: #EBFFF1;
         --soft-white: #F8F5F2;
-        --muted-white: rgba(248, 245, 242, 0.8);
-        --warm-gray: #C4C3C0;
-        --gold: #FFC857;
-        --burgundy: #60070B;
-        --card-bg: rgba(255, 255, 255, 0.03);
+        --muted-white: rgba(248, 245, 242, 0.86);
+        --card-glass: rgba(255, 255, 255, 0.05);
       }
 
       * {
@@ -38,9 +37,10 @@
         font-family: 'Montserrat', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
         color: var(--soft-white);
         background:
-          radial-gradient(circle at top right, rgba(237, 28, 36, 0.18), transparent 45%),
-          radial-gradient(circle at 20% 20%, rgba(255, 117, 117, 0.25), transparent 55%),
-          linear-gradient(135deg, #060606, #0f0f0f 45%, #1b1b1b 100%);
+          radial-gradient(circle at 80% 20%, rgba(237, 28, 36, 0.35), transparent 55%),
+          radial-gradient(circle at 15% 15%, rgba(15, 122, 74, 0.4), transparent 60%),
+          radial-gradient(circle at 50% 80%, rgba(185, 11, 23, 0.35), transparent 55%),
+          linear-gradient(135deg, var(--evergreen-deep), #050505 45%, #0F0F0F 100%);
         min-height: 100vh;
       }
 
@@ -191,7 +191,7 @@
       }
 
       .hero h1 span {
-        color: var(--foundation-red);
+        color: var(--holly-green);
         display: block;
       }
 
@@ -200,9 +200,9 @@
         align-items: center;
         gap: 10px;
         text-transform: uppercase;
-        letter-spacing: 0.4em;
+        letter-spacing: 0.32em;
         font-size: 0.8rem;
-        color: var(--gold);
+        color: var(--mint-cream);
         margin-bottom: 18px;
       }
 
@@ -211,7 +211,7 @@
         display: block;
         width: 50px;
         height: 1px;
-        background: var(--gold);
+        background: var(--holly-green);
       }
 
       .hero p {
@@ -246,8 +246,8 @@
       }
 
       .hero-card {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(145deg, rgba(15, 122, 74, 0.65), rgba(237, 28, 36, 0.45));
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 30px;
         padding: clamp(20px, 4vw, 36px);
         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
@@ -280,7 +280,7 @@
 
       .stat strong {
         font-size: 2rem;
-        color: var(--foundation-red);
+        color: var(--mint-cream);
       }
 
       .stat span {
@@ -291,11 +291,11 @@
       }
 
       .highlight-card {
-        background: rgba(237, 28, 36, 0.12);
+        background: linear-gradient(125deg, rgba(237, 28, 36, 0.35), rgba(15, 122, 74, 0.3));
         border-radius: 18px;
         padding: 18px;
         margin-top: 24px;
-        border: 1px solid rgba(237, 28, 36, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .highlight-card h3 {
@@ -333,10 +333,10 @@
       }
 
       .impact-card {
-        background: rgba(255, 255, 255, 0.04);
+        background: linear-gradient(150deg, rgba(15, 122, 74, 0.25), rgba(237, 28, 36, 0.18));
         border-radius: 24px;
         padding: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         position: relative;
         overflow: hidden;
         min-height: 240px;
@@ -356,7 +356,7 @@
         margin: 0 0 14px;
         font-size: 1.3rem;
         text-transform: uppercase;
-        color: var(--foundation-red);
+        color: var(--mint-cream);
       }
 
       .impact-card p {
@@ -379,10 +379,10 @@
       }
 
       .day-card {
-        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(160deg, rgba(237, 28, 36, 0.35), rgba(15, 122, 74, 0.35));
         border-radius: 18px;
         padding: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         min-height: 150px;
         display: flex;
         flex-direction: column;
@@ -392,7 +392,7 @@
       .day-card strong {
         font-size: 0.85rem;
         letter-spacing: 0.28em;
-        color: var(--gold);
+        color: var(--mint-cream);
       }
 
       .day-card h4 {
@@ -416,8 +416,8 @@
       .tier-card {
         border-radius: 24px;
         padding: 28px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(150deg, rgba(15, 122, 74, 0.3), rgba(237, 28, 36, 0.25));
+        border: 1px solid rgba(255, 255, 255, 0.14);
         display: grid;
         gap: 18px;
       }
@@ -425,7 +425,7 @@
       .tier-card h3 {
         margin: 0;
         font-size: 2rem;
-        color: var(--gold);
+        color: var(--mint-cream);
       }
 
       .tier-card span {
@@ -446,7 +446,7 @@
         margin-top: clamp(36px, 6vw, 64px);
         padding: clamp(28px, 6vw, 48px);
         border-radius: 30px;
-        background: linear-gradient(120deg, var(--foundation-red), var(--foundation-red-deep));
+        background: linear-gradient(120deg, var(--foundation-red), var(--pine-green));
         color: #fff;
         display: grid;
         gap: 20px;
