@@ -3,19 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>XyberIQ Customer Portal</title>
+    <title>LiveLIVE Foundation | 12 Days of Giving</title>
+    <meta
+      name="description"
+      content="Join LiveLIVE Foundation’s 12 Days of Giving to support single-parent households and military veterans with emergency assistance, wellness care, and community hope."
+    >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
     <style>
       :root {
-        --primary-blue: #0072FF;
-        --accent-aqua: #00E0FF;
-        --neutral-white: #FFFFFF;
-        --support-gray: #2B2B2B;
-        --background-black: #000000;
-        --ink: #0B1221;
-        --muted: #6B7280;
+        --foundation-red: #ED1C24;
+        --foundation-red-deep: #B90B17;
+        --cranberry: #7F060D;
+        --evergreen-deep: #031D14;
+        --pine-green: #0F7A4A;
+        --holly-green: #1EA464;
+        --mint-cream: #EBFFF1;
+        --soft-white: #F8F5F2;
+        --muted-white: rgba(248, 245, 242, 0.86);
+        --card-glass: rgba(255, 255, 255, 0.05);
       }
 
       * {
@@ -24,12 +34,20 @@
 
       body {
         margin: 0;
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        color: var(--neutral-white);
-        background: radial-gradient(120% 120% at 15% 15%, rgba(0, 224, 255, 0.18), transparent 60%),
-                    radial-gradient(110% 110% at 85% 20%, rgba(0, 114, 255, 0.35), transparent 55%),
-                    linear-gradient(160deg, #020308 0%, #091228 40%, #04070F 100%);
+        font-family: 'Montserrat', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        color: var(--soft-white);
+        background:
+          radial-gradient(circle at 80% 20%, rgba(237, 28, 36, 0.35), transparent 55%),
+          radial-gradient(circle at 15% 15%, rgba(15, 122, 74, 0.4), transparent 60%),
+          radial-gradient(circle at 50% 80%, rgba(185, 11, 23, 0.35), transparent 55%),
+          linear-gradient(135deg, var(--evergreen-deep), #050505 45%, #0F0F0F 100%);
         min-height: 100vh;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
 
       a {
@@ -38,924 +56,699 @@
       }
 
       header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 28px clamp(24px, 6vw, 64px);
         position: sticky;
         top: 0;
         z-index: 10;
-        backdrop-filter: blur(16px);
-        background: rgba(5, 10, 25, 0.75);
-        border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid rgba(237, 28, 36, 0.35);
       }
 
-      .brand {
+      .nav {
+        margin: 0 auto;
+        padding: 18px clamp(20px, 6vw, 72px);
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1200px;
+      }
+
+      .logo-lockup {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .foundation-logo {
+        display: inline-flex;
         flex-direction: column;
-        gap: 4px;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        padding: 8px 14px 12px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
       }
 
-      .brand-name {
-        font-family: 'Poppins', 'Inter', sans-serif;
-        font-size: clamp(1.4rem, 2vw, 1.6rem);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-        background: linear-gradient(90deg, var(--primary-blue), var(--accent-aqua));
-        -webkit-background-clip: text;
-        color: transparent;
+      .foundation-logo .script-wordmark {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.6rem;
+        line-height: 0.9;
+        color: #000;
+        position: relative;
+        margin-bottom: 2px;
       }
 
-      .brand-tagline {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+      .foundation-logo .script-wordmark::after {
+        content: '★';
+        font-size: 1.2rem;
+        color: var(--foundation-red);
+        position: absolute;
+        top: 0.1rem;
+        right: -0.4rem;
       }
 
-      nav {
+      .foundation-logo .block-wordmark {
+        background: var(--foundation-red);
+        color: #fff;
+        width: 100%;
+        padding: 6px 12px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-align: center;
+        letter-spacing: 0.22em;
+      }
+
+      .foundation-logo .tagline {
+        font-size: 0.7rem;
+        letter-spacing: 0.6em;
+        color: #000;
+        margin-top: 8px;
+      }
+
+      .nav-links {
         display: flex;
-        gap: clamp(16px, 3vw, 32px);
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.7);
+        align-items: center;
+        gap: clamp(12px, 3vw, 24px);
+        font-size: 0.92rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted-white);
       }
 
-      nav a:hover {
-        color: var(--neutral-white);
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      .stripe-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        border: none;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, var(--foundation-red), var(--foundation-red-deep));
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 14px 30px rgba(237, 28, 36, 0.46);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .stripe-button svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .stripe-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(237, 28, 36, 0.6);
+      }
+
+      main {
+        padding-bottom: 80px;
       }
 
       .hero {
-        padding: clamp(48px, 12vw, 120px) clamp(24px, 6vw, 96px) clamp(32px, 12vw, 80px);
+        padding: clamp(48px, 8vw, 108px) clamp(20px, 7vw, 96px) clamp(32px, 6vw, 80px);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: clamp(32px, 6vw, 64px);
+        gap: clamp(28px, 6vw, 64px);
         align-items: center;
-        position: relative;
-      }
-
-      .halo {
-        position: absolute;
-        inset: 10% auto auto 50%;
-        transform: translateX(-50%);
-        width: clamp(280px, 50vw, 520px);
-        height: clamp(280px, 50vw, 520px);
-        background: radial-gradient(circle, rgba(0, 114, 255, 0.35) 0%, rgba(0, 224, 255, 0.2) 40%, transparent 70%);
-        filter: blur(10px);
-        opacity: 0.6;
-        pointer-events: none;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.24em;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 18px;
-      }
-
-      .hero-eyebrow::before {
-        content: '';
-        display: inline-block;
-        width: 36px;
-        height: 1px;
-        background: linear-gradient(90deg, rgba(0, 114, 255, 0), rgba(0, 224, 255, 0.8));
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       .hero h1 {
-        font-family: 'Poppins', 'Inter', sans-serif;
-        font-weight: 800;
-        font-size: clamp(2.8rem, 6vw, 4.6rem);
+        font-size: clamp(2.6rem, 5vw, 4.4rem);
+        margin: 0 0 18px;
         line-height: 1.1;
-        margin: 0 0 24px;
-        color: var(--neutral-white);
-        text-shadow: 0 16px 48px rgba(1, 25, 65, 0.6);
+        text-transform: uppercase;
       }
 
       .hero h1 span {
-        display: inline-block;
-        background: linear-gradient(90deg, var(--primary-blue), var(--accent-aqua));
-        -webkit-background-clip: text;
-        color: transparent;
+        color: var(--holly-green);
+        display: block;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 0.8rem;
+        color: var(--mint-cream);
+        margin-bottom: 18px;
+      }
+
+      .eyebrow::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 1px;
+        background: var(--holly-green);
       }
 
       .hero p {
-        max-width: 540px;
-        font-size: clamp(1rem, 1.8vw, 1.25rem);
-        color: rgba(255, 255, 255, 0.78);
-        margin: 0 0 36px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--muted-white);
+        margin-bottom: 32px;
       }
 
-      .action-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        position: relative;
-        justify-content: center;
-        padding: 18px 32px;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 1rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: linear-gradient(120deg, var(--primary-blue), var(--accent-aqua));
-        color: var(--neutral-white);
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 16px 30px rgba(0, 114, 255, 0.32);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .action-button::after {
-        content: '→';
-        font-size: 1.2rem;
-      }
-
-      .action-button:hover {
-        transform: translateY(-1px) scale(1.01);
-        box-shadow: 0 22px 38px rgba(0, 114, 255, 0.45);
-      }
-
-      .hero-card {
-        position: relative;
-        z-index: 0;
-        background: rgba(0, 10, 30, 0.68);
-        border: 1px solid rgba(0, 224, 255, 0.18);
-        border-radius: 24px;
-        padding: clamp(24px, 5vw, 40px);
-        display: grid;
-        gap: 18px;
-        backdrop-filter: blur(24px);
-        box-shadow: inset 0 0 0 1px rgba(0, 114, 255, 0.1), 0 20px 50px rgba(0, 0, 0, 0.45);
-      }
-
-      .hero-card h2 {
-        font-family: 'Poppins', 'Inter', sans-serif;
-        margin: 0;
-        font-size: 1.4rem;
-        font-weight: 700;
-      }
-
-      .hero-metric {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 16px 20px;
-        background: rgba(0, 114, 255, 0.12);
-        border-radius: 16px;
-        border: 1px solid rgba(0, 224, 255, 0.16);
-      }
-
-      .hero-metric strong {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.6rem;
-        letter-spacing: 0.08em;
-      }
-
-      .hero-metric span {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.65);
-      }
-
-      .section {
-        padding: clamp(64px, 12vw, 96px) clamp(24px, 6vw, 96px);
-      }
-
-      .section h2 {
-        font-family: 'Poppins', 'Inter', sans-serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin: 0 0 12px;
-        color: var(--neutral-white);
-      }
-
-      .section p.lead {
-        max-width: 640px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 1.05rem;
-        margin: 0 0 40px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: clamp(18px, 4vw, 28px);
-      }
-
-      .step-card {
-        background: rgba(6, 14, 35, 0.82);
-        border: 1px solid rgba(0, 224, 255, 0.18);
-        border-radius: 20px;
-        padding: 24px;
-        position: relative;
-        overflow: hidden;
-        display: grid;
-        gap: 12px;
-      }
-
-      .step-card::before {
-        content: attr(data-step);
-        position: absolute;
-        top: 18px;
-        right: 24px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 3.4rem;
-        font-weight: 700;
-        line-height: 1;
-        background: linear-gradient(120deg, rgba(0, 114, 255, 0.4), rgba(0, 224, 255, 0.2));
-        -webkit-background-clip: text;
-        color: transparent;
-        opacity: 0.4;
-      }
-
-      .step-card h3 {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        font-size: 1.2rem;
-      }
-
-      .step-card p {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      .step-card ul {
-        margin: 0;
-        padding-left: 18px;
-        color: rgba(255, 255, 255, 0.72);
-        font-size: 0.9rem;
-        display: grid;
-        gap: 6px;
-      }
-
-      .cta-banner {
-        margin-top: clamp(48px, 10vw, 72px);
-        padding: 30px clamp(24px, 6vw, 48px);
-        border-radius: 24px;
-        background: linear-gradient(120deg, rgba(0, 114, 255, 0.35), rgba(0, 224, 255, 0.55));
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-        color: var(--ink);
-      }
-
-      .cta-banner h3 {
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        margin: 0;
-      }
-
-      .cta-banner p {
-        margin: 0;
-        max-width: 520px;
-        color: rgba(11, 18, 33, 0.8);
-        font-size: 1rem;
-      }
-
-      .cta-banner .action-button {
-        background: linear-gradient(120deg, #0B1221, #1F2B4A);
-        color: var(--neutral-white);
-        box-shadow: 0 20px 36px rgba(11, 18, 33, 0.35);
-      }
-
-      .pricing-section {
-        background: rgba(4, 8, 20, 0.88);
-        border-top: 1px solid rgba(0, 114, 255, 0.18);
-        border-bottom: 1px solid rgba(0, 114, 255, 0.18);
-      }
-
-      .pricing-wrapper {
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 28px;
-        padding: clamp(24px, 5vw, 40px);
-        border: 1px solid rgba(0, 114, 255, 0.18);
-        backdrop-filter: blur(18px);
-      }
-
-      .signup-form {
-        margin-top: clamp(40px, 6vw, 64px);
-        padding: clamp(24px, 5vw, 40px);
-        background: rgba(7, 14, 30, 0.82);
-        border: 1px solid rgba(0, 224, 255, 0.16);
-        border-radius: 24px;
-        display: grid;
-        gap: clamp(20px, 4vw, 32px);
-        color: rgba(255, 255, 255, 0.85);
-      }
-
-      .signup-form h3 {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(1.5rem, 3vw, 2rem);
-      }
-
-      .signup-form p {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.7);
-        max-width: 640px;
-      }
-
-      .signup-fields {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: clamp(16px, 3vw, 24px);
-      }
-
-      .signup-field {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .signup-field label {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      .signup-field input,
-      .signup-field select {
-        padding: 14px 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(0, 114, 255, 0.35);
-        background: rgba(8, 18, 40, 0.85);
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1rem;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .signup-field input:focus,
-      .signup-field select:focus {
-        outline: none;
-        border-color: rgba(0, 224, 255, 0.7);
-        box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.2);
-      }
-
-      .signup-footer {
+      .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        justify-content: space-between;
         align-items: center;
-        color: rgba(255, 255, 255, 0.55);
-        font-size: 0.85rem;
       }
 
-      .signup-footer button {
-        border: none;
+      .ghost-button {
+        padding: 14px 24px;
+        border-radius: 999px;
+        border: 1px solid rgba(248, 245, 242, 0.35);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: var(--soft-white);
         cursor: pointer;
+        background: transparent;
+        transition: background 0.2s ease, color 0.2s ease;
       }
 
-      .disclaimer {
-        max-width: 420px;
+      .ghost-button:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-card {
+        background: linear-gradient(145deg, rgba(15, 122, 74, 0.65), rgba(237, 28, 36, 0.45));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 30px;
+        padding: clamp(20px, 4vw, 36px);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::after {
+        content: '';
+        position: absolute;
+        inset: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        pointer-events: none;
+      }
+
+      .hero-stats {
+        display: grid;
+        gap: 18px;
+      }
+
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 14px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat strong {
+        font-size: 2rem;
+        color: var(--mint-cream);
+      }
+
+      .stat span {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--muted-white);
+      }
+
+      .highlight-card {
+        background: linear-gradient(125deg, rgba(237, 28, 36, 0.35), rgba(15, 122, 74, 0.3));
+        border-radius: 18px;
+        padding: 18px;
+        margin-top: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .highlight-card h3 {
+        margin: 0 0 6px;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: clamp(56px, 8vw, 96px) clamp(20px, 7vw, 96px);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        max-width: 720px;
+        margin-bottom: 40px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2rem, 3.4vw, 3.2rem);
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .section-header p {
+        margin: 16px 0 0;
+        color: var(--muted-white);
+        line-height: 1.7;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: clamp(18px, 4vw, 32px);
+      }
+
+      .impact-card {
+        background: linear-gradient(150deg, rgba(15, 122, 74, 0.25), rgba(237, 28, 36, 0.18));
+        border-radius: 24px;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        position: relative;
+        overflow: hidden;
+        min-height: 240px;
+      }
+
+      .impact-card::before {
+        content: attr(data-label);
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      .impact-card h3 {
+        margin: 0 0 14px;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: var(--mint-cream);
+      }
+
+      .impact-card p {
+        margin: 0;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .impact-card ul {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .days-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+
+      .day-card {
+        background: linear-gradient(160deg, rgba(237, 28, 36, 0.35), rgba(15, 122, 74, 0.35));
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .day-card strong {
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+        color: var(--mint-cream);
+      }
+
+      .day-card h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .day-card p {
+        margin: 0;
+        color: var(--muted-white);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .tiers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: clamp(18px, 3vw, 28px);
+      }
+
+      .tier-card {
+        border-radius: 24px;
+        padding: 28px;
+        background: linear-gradient(150deg, rgba(15, 122, 74, 0.3), rgba(237, 28, 36, 0.25));
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        display: grid;
+        gap: 18px;
+      }
+
+      .tier-card h3 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--mint-cream);
+      }
+
+      .tier-card span {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+        color: var(--muted-white);
+      }
+
+      .tier-card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .cta-panel {
+        margin-top: clamp(36px, 6vw, 64px);
+        padding: clamp(28px, 6vw, 48px);
+        border-radius: 30px;
+        background: linear-gradient(120deg, var(--foundation-red), var(--pine-green));
+        color: #fff;
+        display: grid;
+        gap: 20px;
+      }
+
+      .cta-panel h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        text-transform: uppercase;
+      }
+
+      .cta-panel p {
+        margin: 0;
+        line-height: 1.7;
+        max-width: 600px;
       }
 
       footer {
-        padding: 36px clamp(24px, 6vw, 96px);
-        color: rgba(255, 255, 255, 0.55);
-        font-size: 0.9rem;
+        padding: 32px clamp(20px, 6vw, 96px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #050505;
+        color: rgba(255, 255, 255, 0.6);
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 12px;
         justify-content: space-between;
-        background: rgba(2, 4, 10, 0.9);
-        border-top: 1px solid rgba(0, 114, 255, 0.15);
       }
 
       footer a {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.9);
       }
 
-      footer a:hover {
-        color: var(--neutral-white);
-      }
-
-      @media (max-width: 960px) {
-        header {
+      @media (max-width: 768px) {
+        .nav {
           flex-direction: column;
           align-items: flex-start;
-          gap: 16px;
-        }
-
-        nav {
-          flex-wrap: wrap;
         }
 
         .hero {
           grid-template-columns: 1fr;
-          text-align: left;
         }
 
-        .action-button {
-          width: auto;
-        }
-
-        .cta-banner {
-          align-items: stretch;
-        }
-      }
-
-      @media (max-width: 640px) {
-        header {
-          position: static;
-          background: transparent;
-          backdrop-filter: none;
-          border-bottom: 0;
-        }
-
-        .hero h1 {
-          font-size: clamp(2.2rem, 10vw, 3rem);
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        .hero-card {
-          padding: 24px;
-        }
-
-        .cta-banner {
-          padding: 28px;
+        .nav-links {
+          flex-wrap: wrap;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="brand">
-        <span class="brand-name">XyberIQ</span>
-        <span class="brand-tagline">Clarity. Compliance. Confidence.</span>
+      <div class="nav">
+        <div class="logo-lockup" aria-label="LiveLIVE Foundation logo">
+          <div class="foundation-logo">
+            <span class="script-wordmark">Live</span>
+            <div class="block-wordmark">LIVE</div>
+            <span class="tagline">FOUNDATION</span>
+          </div>
+          <div>
+            <div style="font-weight:700; letter-spacing:0.18em; font-size:0.85rem;">liveLIVE FOUNDATION</div>
+            <div style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.26em; color:var(--muted-white);">12 Days of Giving</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#impact">Impact</a>
+          <a href="#days">12 Days</a>
+          <a href="#tiers">Ways to give</a>
+          <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+            Donate with Stripe
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
       </div>
-      <nav>
-        <a href="#auth">Portal Access</a>
-        <a href="#onboarding">Getting Started</a>
-        <a href="#pricing">Plans</a>
-        <a href="#support">Support</a>
-      </nav>
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="halo"></div>
-        <div class="hero-content">
-          <span class="hero-eyebrow">Customer portal</span>
-          <h1 id="hero-title">
-            Elevate your compliance IQ with <span>XyberIQ</span>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">12 days of giving</div>
+          <h1>
+            Fuel hope for single-parent households &amp; veterans
+            <span>December 1–12</span>
           </h1>
           <p>
-            Launch your secure customer workspace in minutes. Manage evidence, monitor compliance posture, and
-            empower every team member with the clarity, compliance, and confidence your organization deserves.
+            Every winter we rally urgent relief for caregivers raising children alone and service members returning to civilian life.
+            Your donation keeps heat flowing, meals stocked, counseling funded, and dignity restored—right when it’s needed most.
           </p>
-          <a class="action-button" href="#auth">Enter Customer Portal</a>
+          <div class="hero-actions">
+            <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+              Donate with Stripe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a class="ghost-button" href="#days">See the 12-day plan</a>
+          </div>
         </div>
-        <aside class="hero-card" aria-label="Portal Highlights">
-          <h2>Inside the portal</h2>
-          <div class="hero-metric">
-            <div>
-              <strong>7-Day</strong>
-              <span>Full-feature trial</span>
+        <aside class="hero-card" aria-label="Campaign metrics">
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>326</strong>
+              <span>Families served</span>
             </div>
-            <span>Preview every automation before billing kicks in.</span>
+            <div class="stat">
+              <strong>214</strong>
+              <span>Veterans honored</span>
+            </div>
+            <div class="stat">
+              <strong>$150K</strong>
+              <span>Goal in 12 days</span>
+            </div>
           </div>
-          <div class="hero-metric">
-            <div>
-              <strong>99%</strong>
-              <span>Automated mapping</span>
-            </div>
-            <span>Stay audit-ready with policy attestation and delta training.</span>
-          </div>
-          <div class="hero-metric">
-            <div>
-              <strong>24/7</strong>
-              <span>Real-time assurance</span>
-            </div>
-            <span>Monitor controls, risks, and incidents with a single glance.</span>
+          <div class="highlight-card">
+            <h3>This year’s focus</h3>
+            <p>
+              Emergency grants averaging $500 per household, trauma-informed counseling sessions, and mobile pantry deliveries that
+              stretch every dollar where it counts.
+            </p>
           </div>
         </aside>
       </section>
 
-      <section id="auth" class="section" aria-labelledby="auth-heading">
-        <h2 id="auth-heading">Access the Portal</h2>
-        <p class="lead">
-          Centralize HIPAA and CMMC workflows in a single workspace. Sign in, create an account, or restart the onboarding process—all backed by secure identity management.
-        </p>
-        <div class="grid">
-          <article class="step-card" data-step="01">
-            <h3>Sign in securely</h3>
-            <p>Use your verified username and password to continue where you left off.</p>
-            <ul>
-              <li>SSO &amp; MFA enforced by default</li>
-              <li>Role-based access controls</li>
-              <li>Least-privilege, audit-friendly design</li>
-            </ul>
-            <a class="action-button" style="margin-top:12px" href="/login">Portal Login</a>
-          </article>
-          <article class="step-card" data-step="02">
-            <h3>Create your account</h3>
-            <p>Start the 7-day free trial and invite collaborators instantly.</p>
-            <ul>
-              <li>Guided account creation</li>
-              <li>Email verification in under a minute</li>
-              <li>Automated employee seat detection</li>
-            </ul>
-            <a class="action-button" style="margin-top:12px" href="/signup">Create Account</a>
-          </article>
-          <article class="step-card" data-step="03">
-            <h3>Verify &amp; activate</h3>
-            <p>Confirm your email address, lock in trial access, and progress to plan selection.</p>
-            <ul>
-              <li>Instant verification status updates</li>
-              <li>Security-first onboarding checklist</li>
-              <li>Transparent billing preview</li>
-            </ul>
-            <a class="action-button" style="margin-top:12px" href="#pricing">Select Plan</a>
-          </article>
+      <section id="impact" class="section">
+        <div class="section-header">
+          <h2>Where your gift lands first</h2>
+          <p>
+            We listen to partner agencies in Atlanta, Houston, Fayetteville, and San Diego to dispatch support within 24 hours.
+            Two communities lead our mission this season.
+          </p>
         </div>
-      </section>
-
-      <section id="onboarding" class="section" aria-labelledby="onboarding-heading">
-        <h2 id="onboarding-heading">Onboard with confidence</h2>
-        <p class="lead">
-          Meet your compliance co-pilot. Automations, guidance, and controls adjust based on your sector,
-          framework mix, and team size—so you can get back to building with peace of mind.
-        </p>
-        <div class="grid">
-          <article class="step-card" data-step="A">
-            <h3>Guided launch</h3>
-            <p>Structured milestones shepherd your team from trial activation to evidence collection.</p>
-            <ul>
-              <li>Policy import &amp; mapping wizard</li>
-              <li>Live readiness scoring</li>
-              <li>Task automation for every role</li>
-            </ul>
-          </article>
-          <article class="step-card" data-step="B">
-            <h3>Intelligent scaling</h3>
-            <p>Billing adjusts with your employee count while multi-framework coverage adds exponential value.</p>
-            <ul>
-              <li>Automatic seat tier detection</li>
-              <li>Multi-framework boost toggles</li>
-              <li>Scenario modeling &amp; forecasting</li>
-            </ul>
-          </article>
-          <article class="step-card" data-step="C">
-            <h3>Audit readiness</h3>
-            <p>Export spotless reports, share auditor access, and track every attestation in one dashboard.</p>
-            <ul>
-              <li>Evidence ledger (WORM-ready)</li>
-              <li>Auditor mode with fine-grained controls</li>
-              <li>Policy re-attest &amp; delta alerts</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="cta-banner" id="support">
-          <h3>Need a hand tailoring your rollout?</h3>
-          <p>Tap into XyberIQ onboarding engineers, live office hours, and white-glove migrations. We’ll align the portal to your regulatory roadmap in days, not months.</p>
-          <a class="action-button" href="mailto:success@xyberiq.io">Connect With Success Team</a>
-        </div>
-      </section>
-
-      <section id="pricing" class="section pricing-section" aria-labelledby="pricing-heading">
-        <h2 id="pricing-heading">Plans built for every compliance chapter</h2>
-        <p class="lead">
-          Choose the autopilot or readiness sprint that best matches your organization. Start with a 7-day free trial—billing begins only after you activate your plan.
-        </p>
-        <div class="pricing-wrapper">
-          <!-- XyberIQ Pricing Card -->
-          <div class="xy-pricing-card" data-form="#signupForm" style="--electric:var(--primary-blue);--aqua:var(--accent-aqua);--ink:var(--ink);--muted:var(--muted);--border:#1f2a44;--panel:#0b162b;">
-            <style>
-              .xy-pricing-card{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--ink); border:1px solid var(--border); border-radius:16px; padding:16px; background:#fff}
-              .xy-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}
-              .xy-title{font-weight:800;margin:0}
-              .xy-sub{color:var(--muted);font-size:12px}
-              .xy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-              @media(max-width:720px){.xy-grid{grid-template-columns:1fr}}
-              .xy-card{border:1px solid var(--border);border-radius:14px;padding:12px;background:#fff}
-              .xy-controls{display:grid;grid-template-columns:1fr 1fr; gap:10px}
-              .xy-controls .full{grid-column:1/-1}
-              label{font-size:12px;color:var(--muted);font-weight:800;display:block;margin-bottom:6px}
-              select{width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:10px;background:#fff}
-              .xy-pill{display:inline-flex;border:1px solid var(--border);border-radius:999px;padding:4px}
-              .xy-pill button{border:0;background:none;padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
-              .xy-pill button.active{background:var(--ink);color:#fff}
-              .xy-total{background:var(--panel);border:1px solid #e5efff;border-radius:14px;padding:14px}
-              .xy-price{font-size:28px;font-weight:900}
-              .xy-muted{color:var(--muted);font-size:12px}
-              .xy-row{display:flex;justify-content:space-between;gap:8px;margin-top:6px;font-size:14px}
-              .xy-inc{list-style:disc;margin:8px 0 0 18px;padding:0}
-              .xy-btn{display:inline-block;border:0;background:linear-gradient(90deg,var(--electric),var(--aqua));color:#fff;padding:10px 14px;border-radius:12px;font-weight:800;cursor:pointer;text-decoration:none}
-              .xy-line{height:1px;background:#eef2ff;margin:10px 0}
-              .xy-badge{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:800;font-size:11px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
-              @media print{.xy-btn,.xy-pill{display:none}}
-            </style>
-
-            <div class="xy-head">
-              <div>
-                <h3 class="xy-title">Choose your plan</h3>
-                <div class="xy-sub">Seatless org pricing • Annual saves 12%</div>
-              </div>
-              <div class="xy-pill" role="tablist" aria-label="Billing toggle">
-                <button type="button" data-billing="Monthly" class="active" aria-selected="true" role="tab">Monthly</button>
-                <button type="button" data-billing="Annual" aria-selected="false" role="tab">Annual −12%</button>
-              </div>
-            </div>
-
-            <div class="xy-grid">
-              <div class="xy-card">
-                <div class="xy-controls">
-                  <div class="full">
-                    <label for="xyProduct">Product</label>
-                    <select id="xyProduct" name="product">
-                      <option>HIPAA Autopilot</option>
-                      <option>CMMC L2 Autopilot</option>
-                      <option>HIPAA Readiness Sprint (one‑time)</option>
-                      <option>CMMC L2 Readiness Sprint (one‑time)</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="xyBand">Band</label>
-                    <select id="xyBand" name="band">
-                      <option>S-50 (1–50)</option>
-                      <option>M-200 (51–200)</option>
-                      <option>MM-1K (201–1,000)</option>
-                      <option>ENT-5K (1,001–5,000)</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="xyMF">Multi‑Framework</label>
-                    <select id="xyMF" name="multi_framework">
-                      <option>No</option>
-                      <option>Yes (+20%)</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="xy-line"></div>
-
-                <div>
-                  <div class="xy-badge" id="xyPlanBadge">Autopilot</div>
-                  <ul class="xy-inc" id="xyIncludes">
-                    <li>Event‑triggered micro‑lessons + policy re‑attest</li>
-                    <li>Evidence ledger (WORM‑ready) &amp; Auditor Mode</li>
-                    <li>Delta‑training on rule changes</li>
-                  </ul>
-                  <div class="xy-inc" id="xyIncludesSprint" style="display:none">
-                    <li>SSO/SCIM setup &amp; role‑based micro‑lessons</li>
-                    <li>Policy upload + re‑attest, control mapping</li>
-                    <li>First auditor export &amp; 30/60/90 plan</li>
-                  </div>
-                  <div class="xy-muted" style="margin-top:6px">Styled to match your Readiness &amp; Gap Report look for clean printouts. </div>
-                </div>
-              </div>
-
-              <div class="xy-total" aria-live="polite">
-                <div class="xy-price" id="xyPrice">$—</div>
-                <div class="xy-muted" id="xyPriceNote">—</div>
-
-                <div class="xy-row"><span>Base</span><span id="xyBase">$—</span></div>
-                <div class="xy-row" id="xyMFRow" style="display:none"><span>Multi‑Framework +20%</span><span id="xyMFVal">$—</span></div>
-                <div class="xy-row" id="xyDiscRow" style="display:none"><span>Annual discount −12%</span><span id="xyDiscVal">−$—</span></div>
-                <div class="xy-line"></div>
-                <div class="xy-row" style="font-weight:900"><span id="xyTotalLabel">Total</span><span id="xyTotal">$—</span></div>
-
-                <div style="margin-top:10px"><button type="button" class="xy-btn" id="xyApply">Use these settings</button></div>
-
-                <input type="hidden" name="billing" value="Monthly">
-                <input type="hidden" name="product" value="HIPAA Autopilot">
-                <input type="hidden" name="band" value="S-50">
-                <input type="hidden" name="multi_framework" value="No">
-                <input type="hidden" name="price_cents" value="0">
-              </div>
-            </div>
-
-            <script>
-              (function(){
-                const BANDS = ["S-50","M-200","MM-1K","ENT-5K"];
-                const SPRINT = { hipaa:[6000,12000,28000,45000], cmmc:[15000,35000,65000,110000] };
-                const AUTO_M = { hipaa:[299,699,1499,2999], cmmc:[449,999,2199,4499] };
-
-                const $ = (s, r=document) => r.querySelector(s);
-                const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
-                const fmt0 = n => n.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0});
-
-                const elProduct = $("#xyProduct");
-                const elBand    = $("#xyBand");
-                const elMF      = $("#xyMF");
-                const pillBtns  = $$(".xy-pill button", document.currentScript.closest(".xy-pricing-card"));
-                const hidden    = $$("input[type=hidden]", document.currentScript.closest(".xy-pricing-card"));
-                const h = Object.fromEntries(hidden.map(i=>[i.name,i]));
-
-                const price = {
-                  billing: "Monthly",
-                  product: "HIPAA Autopilot",
-                  band: "S-50",
-                  mf: "No"
-                };
-
-                function isSprint(){ return /Sprint/.test(price.product); }
-                function isHipaa(){ return /^HIPAA/.test(price.product); }
-
-                function updateBadges(){
-                  $("#xyPlanBadge").textContent = isSprint() ? "Sprint (one‑time)" : "Autopilot";
-                  $("#xyIncludes").style.display = isSprint() ? "none" : "";
-                  $("#xyIncludesSprint").style.display = isSprint() ? "" : "none";
-                  elMF.disabled = isSprint();
-                  if(isSprint()){ elMF.value = "No"; price.mf = "No"; }
-                }
-
-                function render(){
-                  const idx = Math.max(0, BANDS.findIndex(b => price.band.startsWith(b)));
-                  const mf = price.mf === "Yes";
-
-                  let baseMonthly=0, baseOneTime=0, mfAdd=0, discount=0, total=0, note="", totalLabel="Total";
-
-                  if(isSprint()){
-                    const key = isHipaa() ? "hipaa" : "cmmc";
-                    baseOneTime = SPRINT[key][idx];
-                    mfAdd = 0; discount = 0; total = baseOneTime;
-                    $("#xyPrice").textContent = fmt0(total);
-                    note = "One‑time Readiness Sprint";
-                    $("#xyBase").textContent = fmt0(baseOneTime);
-                    $("#xyMFRow").style.display = "none";
-                    $("#xyDiscRow").style.display = "none";
-                    totalLabel = "Total (one‑time)";
-                  }else{
-                    const key = isHipaa() ? "hipaa" : "cmmc";
-                    baseMonthly = AUTO_M[key][idx];
-                    let monthly = baseMonthly * (mf ? 1.20 : 1);
-                    if(price.billing === "Annual"){
-                      const yearly = Math.round(monthly * 12 * 0.88);
-                      discount = Math.round(monthly*12 - yearly);
-                      total = yearly;
-                      $("#xyPrice").textContent = fmt0(Math.round(monthly*0.88));
-                      note = "Effective monthly • billed annually";
-                      $("#xyDiscRow").style.display = "";
-                      $("#xyDiscVal").textContent = "−" + fmt0(discount);
-                      totalLabel = "Billed per year";
-                    }else{
-                      total = Math.round(monthly);
-                      $("#xyPrice").textContent = fmt0(total);
-                      note = "Per organization / month";
-                      $("#xyDiscRow").style.display = "none";
-                      totalLabel = "Total per month";
-                    }
-                    $("#xyBase").textContent = fmt0(baseMonthly);
-                    $("#xyMFRow").style.display = mf ? "" : "none";
-                    $("#xyMFVal").textContent = mf ? fmt0(Math.round(baseMonthly*0.20)) : "$0";
-                  }
-
-                  $("#xyPriceNote").textContent = note;
-                  $("#xyTotalLabel").textContent = totalLabel;
-                  $("#xyTotal").textContent = fmt0(total);
-
-                  h.billing.value = price.billing;
-                  h.product.value = price.product.replace(" (one‑time)","");
-                  h.band.value = price.band.split(" ")[0];
-                  h.multi_framework.value = price.mf;
-                  h.price_cents.value = (total*100)|0;
-                }
-
-                function syncFromControls(){
-                  price.product = elProduct.value;
-                  price.band    = elBand.value;
-                  price.mf      = elMF.value;
-                  updateBadges();
-                  render();
-                }
-
-                pillBtns.forEach(btn=>{
-                  btn.addEventListener("click", ()=>{
-                    pillBtns.forEach(b=>{ b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
-                    btn.classList.add("active"); btn.setAttribute("aria-selected","true");
-                    price.billing = btn.dataset.billing;
-                    render();
-                  });
-                });
-
-                [elProduct, elBand, elMF].forEach(el=>el.addEventListener("change", syncFromControls));
-
-                const formSel = document.currentScript.closest(".xy-pricing-card").dataset.form;
-                const outer = formSel ? document.querySelector(formSel) : null;
-                $("#xyApply").addEventListener("click", ()=>{
-                  if(!outer){ return; }
-                  ["product","band","billing","multi_framework","price_cents"].forEach(name=>{
-                    const f = outer.querySelector(`[name="${name}"]`);
-                    if(f){ f.value = h[name].value; f.dispatchEvent(new Event("input",{bubbles:true})); }
-                  });
-                  outer.scrollIntoView({behavior:"smooth",block:"center"});
-                });
-
-                if(outer){
-                  const map = {
-                    product: elProduct,
-                    band: elBand,
-                    billing: {set v(x){ pillBtns.forEach(b=>{ const on=b.dataset.billing===x; b.classList.toggle("active",on); b.setAttribute("aria-selected",on?"true":"false"); }); price.billing=x; render(); }},
-                    multi_framework: elMF
-                  };
-                  ["product","band","billing","multi_framework"].forEach(name=>{
-                    const f = outer.querySelector(`[name="${name}"]`);
-                    if(!f) return;
-                    f.addEventListener("change", ()=>{
-                      if(name==="billing"){ map.billing.v = f.value; }
-                      else{
-                        (map[name].tagName ? map[name] : map[name]).value = f.value;
-                        syncFromControls();
-                      }
-                    });
-                  });
-                }
-
-                syncFromControls();
-              })();
-            </script>
-          </div>
-        </div>
-
-        <form id="signupForm" class="signup-form" action="/onboard" method="post">
-          <div>
-            <h3>Activate your 7-day trial</h3>
-            <p>Complete account details, confirm your verification email, and your selected plan will auto-apply when the trial ends.</p>
-          </div>
-
-          <div class="signup-fields">
-            <div class="signup-field">
-              <label for="fullName">Full name</label>
-              <input id="fullName" name="full_name" type="text" placeholder="Jordan Carter" autocomplete="name" required>
-            </div>
-            <div class="signup-field">
-              <label for="workEmail">Work email</label>
-              <input id="workEmail" name="work_email" type="email" placeholder="you@company.com" autocomplete="email" required>
-            </div>
-            <div class="signup-field">
-              <label for="companyName">Organization</label>
-              <input id="companyName" name="company_name" type="text" placeholder="Acme Health Systems" autocomplete="organization" required>
-            </div>
-            <div class="signup-field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="+1 (555) 555-0199" autocomplete="tel">
-            </div>
-            <div class="signup-field">
-              <label for="role">Role</label>
-              <select id="role" name="role" required>
-                <option value="">Select your role</option>
-                <option>Compliance Lead</option>
-                <option>Security Officer</option>
-                <option>IT Director</option>
-                <option>Operations</option>
-                <option>Executive</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="signup-field">
-              <label for="goLive">Target go-live</label>
-              <select id="goLive" name="target_go_live">
-                <option value="">Choose timeline</option>
-                <option>Immediately</option>
-                <option>Next 30 days</option>
-                <option>60-90 days</option>
-                <option>90+ days</option>
-              </select>
-            </div>
-          </div>
-
-          <input type="hidden" name="product" value="HIPAA Autopilot">
-          <input type="hidden" name="band" value="S-50">
-          <input type="hidden" name="billing" value="Monthly">
-          <input type="hidden" name="multi_framework" value="No">
-          <input type="hidden" name="price_cents" value="0">
-
-          <div class="signup-footer">
-            <p class="disclaimer">
-              By starting your trial you agree to XyberIQ’s Terms of Service and Privacy Policy. Billing begins automatically after your 7-day free trial unless you downgrade or cancel.
+        <div class="impact-grid">
+          <article class="impact-card" data-label="Priority">
+            <h3>Single-parent households</h3>
+            <p>
+              71% of the families we serve are led by moms. Utilities, child care, and transportation threaten their stability long before
+              holiday wish lists. Your generosity delivers:
             </p>
-            <button type="submit" class="action-button">Start Free Trial</button>
+            <ul>
+              <li>Emergency rent + utility catch-up</li>
+              <li>Weekend grocery bundles &amp; diapers</li>
+              <li>Gift cards for winter clothing</li>
+            </ul>
+          </article>
+          <article class="impact-card" data-label="Priority">
+            <h3>Military veterans</h3>
+            <p>
+              We collaborate with VA peer mentors to reach veterans navigating PTSD, unemployment, or housing gaps. During 12 Days of Giving we fund:
+            </p>
+            <ul>
+              <li>Telehealth therapy stipends</li>
+              <li>Hotel vouchers and warm gear</li>
+              <li>Small business micro-grants</li>
+            </ul>
+          </article>
+          <article class="impact-card" data-label="How it works">
+            <h3>Rapid response workflow</h3>
+            <p>
+              Every donation is processed securely through Stripe, logged in our transparency dashboard, and issued to partners within 48 hours.
+              You’ll receive a receipt plus daily progress highlights.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="days" class="section">
+        <div class="section-header">
+          <h2>12 days. 12 acts of radical care.</h2>
+          <p>
+            Follow along as we unlock a new initiative each day. Share the schedule, sponsor a day, or stack matching funds with your company.
+          </p>
+        </div>
+        <div class="days-grid">
+          <article class="day-card">
+            <strong>Day 01</strong>
+            <h4>Heat &amp; Light Fund</h4>
+            <p>Keep power on for 40 single-parent households facing shutoff notices.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 02</strong>
+            <h4>Grocery Dash</h4>
+            <p>Deploy mobile pantry trucks stocked with culturally familiar staples.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 03</strong>
+            <h4>Honor Flights Home</h4>
+            <p>Cover travel for veterans attending urgent medical appointments.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 04</strong>
+            <h4>Childcare Boost</h4>
+            <p>Provide pop-up childcare stipends so parents can work extra shifts.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 05</strong>
+            <h4>Warm Gear Kits</h4>
+            <p>Deliver coats, boots, and thermal layers to unhoused veterans.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 06</strong>
+            <h4>Therapy Sessions</h4>
+            <p>Fund 120 trauma-informed telehealth appointments.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 07</strong>
+            <h4>Teen Tech Lab</h4>
+            <p>Refurbish laptops for teens in single-parent homes.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 08</strong>
+            <h4>Emergency Transport</h4>
+            <p>Gas cards and rideshare credits to get families to work and school.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 09</strong>
+            <h4>Veteran Ventures</h4>
+            <p>Micro-grants for veteran-owned startups covering tooling and permits.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 10</strong>
+            <h4>Holiday Tables</h4>
+            <p>Community dinners with chef partners &amp; live music.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 11</strong>
+            <h4>Rest &amp; Respite</h4>
+            <p>Weekend hotel stays for caregivers in burnout.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 12</strong>
+            <h4>Legacy Scholarships</h4>
+            <p>College savings deposits honoring veterans and their children.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tiers" class="section">
+        <div class="section-header">
+          <h2>Choose a giving lane</h2>
+          <p>Every contribution is tax-deductible and processed through secure Stripe Checkout. Pick a lane or enter any amount on the donate screen.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier-card">
+            <span>Fuel a moment</span>
+            <h3>$75</h3>
+            <ul>
+              <li>Grocery tote + diapers for a single parent</li>
+              <li>Therapy copay for one veteran</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Secure a week</span>
+            <h3>$250</h3>
+            <ul>
+              <li>Utility assistance to stop disconnection</li>
+              <li>Hotel night and hot meals for two vets</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Anchor a family</span>
+            <h3>$750</h3>
+            <ul>
+              <li>Rent bridge plus childcare stipends</li>
+              <li>Six telehealth therapy sessions</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Sponsor a day</span>
+            <h3>$5,000</h3>
+            <ul>
+              <li>Your name or company on one of the 12 actions</li>
+              <li>Custom impact recap &amp; social toolkit</li>
+            </ul>
+          </article>
+        </div>
+        <div class="cta-panel">
+          <h3>Ready to back the 12 Days of Giving?</h3>
+          <p>
+            Tap the button below to open our secure Stripe Checkout page. Prefer ACH, stock, or an employer match?
+            Email <a href="mailto:give@livelive.org" style="color:#fff; font-weight:600;">give@livelive.org</a> and we’ll coordinate within one business day.
+          </p>
+          <div>
+            <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+              Donate with Stripe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
           </div>
-        </form>
+        </div>
       </section>
     </main>
 
     <footer>
+      <div>© <span id="year"></span> LiveLIVE Foundation. All rights reserved.</div>
       <div>
-        © <span id="year"></span> XyberIQ. All rights reserved.
-      </div>
-      <div>
-        <a href="https://xyberiq.io/privacy" target="_blank" rel="noopener">Privacy</a> ·
-        <a href="https://xyberiq.io/terms" target="_blank" rel="noopener">Terms</a> ·
-        <a href="mailto:support@xyberiq.io">support@xyberiq.io</a>
+        <a href="mailto:give@livelive.org">give@livelive.org</a> ·
+        <a href="https://instagram.com/livelivefoundation" target="_blank" rel="noopener">Instagram</a> ·
+        <a href="https://www.facebook.com/livelivefoundation" target="_blank" rel="noopener">Facebook</a>
       </div>
     </footer>
 
