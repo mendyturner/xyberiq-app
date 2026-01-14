@@ -26,9 +26,12 @@ from app.schemas import (
     RegisterTenantRequest,
     ResetPasswordRequest,
     TokenResponse,
+    TenantProvisioningRequest,
 )
 from app.services.audit import AuditService
 from app.services.auth import AuthService
+from app.services.billing import BillingService
+from app.services.provisioning import ProvisioningService
 from app.services.tenants import TenantService
 from app.services.users import UserService
 
@@ -71,11 +74,30 @@ def register_tenant(
     if TenantService.get_by_slug(db=db, slug=slug) is not None:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Tenant slug already exists")
 
+    billing_service = BillingService(settings)
+    provisioning_service = ProvisioningService(settings)
+
     tenant = TenantService.create_tenant(
         db=db,
         name=payload.tenant_name,
         slug=slug,
         contact_email=payload.contact_email,
+    )
+
+    billing_customer = billing_service.create_customer(
+        email=payload.contact_email,
+        name=payload.tenant_name,
+        trial_days=settings.billing_free_trial_days,
+    )
+
+    TenantService.attach_billing_profile(
+        db=db,
+        tenant=tenant,
+        customer_id=billing_customer.customer_id,
+        provider=billing_customer.payment_provider,
+        subscription_status="trialing",
+        plan_code=payload.plan_code,
+        trial_ends_at=billing_customer.trial_ends_at,
     )
 
     admin_user = UserService.create_user(
@@ -90,6 +112,19 @@ def register_tenant(
 
     db.commit()
     db.refresh(tenant)
+
+    provisioning_service.publish(
+        TenantProvisioningRequest(
+            tenant_id=tenant.id,
+            customer_id=billing_customer.customer_id,
+            plan_code=payload.plan_code,
+            trial_ends_at=billing_customer.trial_ends_at,
+            metadata={
+                "tenant_slug": tenant.slug,
+                "source_ip": request.client.host if request.client else "unknown",
+            },
+        )
+    )
 
     with tenant_context(tenant.id, tenant.slug):
         admin_user = (

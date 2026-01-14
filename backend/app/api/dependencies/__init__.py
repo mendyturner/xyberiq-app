@@ -1,4 +1,4 @@
-"""Common dependency overrides for FastAPI routes."""
+"""Common FastAPI dependencies shared across routers."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from app.db.session import SessionLocal
 
 
 def get_db() -> Generator[Session, None, None]:
-    """Yield a database session for request lifespan."""
+    """Yield a database session per request."""
 
     db = SessionLocal()
     try:
@@ -22,7 +22,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def get_settings_dependency() -> Settings:
-    """Expose application settings inside request scope."""
+    """Expose application settings."""
 
     return get_settings()
 
